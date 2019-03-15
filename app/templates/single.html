@@ -1,0 +1,77 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+
+    <div id="gtco-maine">
+        <div class="container">
+            <div class="row row-pb-md">
+                <div class="col-md-12">
+                    <article class="mt-negative">
+                        <div class="text-left content-article">
+                            <div class="row">
+                                <div class="col-lg-8 cp-r animate-box">
+                                    {{ article.text | safe }}
+                                </div>
+                                <div class="col-lg-4 animate-box">
+                                    <div class="gtco-highlight right">
+                                        {% if current_user.is_authenticated %}
+                                            <div class="row"
+                                                 style="display: flex; margin-bottom: 25px; justify-content: space-around">
+                                                <a href="/admin/editPost/{{ article.id }}"
+                                                   style="border: 2px solid rgba(210,210,0,0.67); padding: 5px; text-decoration: none; color: #D2D200">Редактировать</a>
+                                                <a href="/admin/deletePost/{{ article.id }}"
+                                                   style="border: 2px solid rgba(172,67,66,0.83); padding: 5px; text-decoration: none; color: rgba(172,67,66,0.83);">Удалить</a>
+                                            </div>
+                                        {% endif %}
+                                        <h4>{{ article.title }}</h4>
+                                        <p>{{ article.description | safe }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comments-list" style="width: 100%;">
+                            <p style="font-size: 3rem;">Комментарии</p>
+                            {% for comment in article.comments %}
+                                <div class="alert alert-dark text-left comment"
+                                     style="display: flex; flex-flow: column; background:#f3f3f3;" role="alert">
+                                    <div class="col-4">
+                                        {{ comment.name }} | {{ comment.email }}
+                                    </div>
+                                    <div class="col-6">
+                                        {{ comment.text }}
+                                    </div>
+                                    <div class="col-3 text-right">{{ comment.date }}</div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                        <div class="row comment-form" style="width: 100%;">
+                            <p style="font-size: 2rem">Оставьте свой комментарий</p>
+                            <form action="/addComment" method="post">
+                                <input type="hidden" name="article" value="{{ article.id }}">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Ваша почта</label>
+                                    <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
+                                           placeholder="email@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput2">Ваше имя</label>
+                                    <input type="text" name="name" class="form-control" id="exampleFormControlInput2"
+                                           placeholder="Фамилия Имя">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Комментарий</label>
+                                    <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="10"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn">Отправить</button>
+                                </div>
+                            </form>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

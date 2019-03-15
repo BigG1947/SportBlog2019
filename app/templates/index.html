@@ -1,0 +1,193 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <div id="gtco-main">
+        <div class="container">
+            <div class="row row-pb-md">
+                <div class="col-md-12">
+                    <ul id="gtco-post-list">
+                        {% if articles[0] %}
+                            <li class="full entry animate-box" data-animate-effect="fadeIn">
+                                <a href="/article/{{ articles[0].id }}">
+                                    <div class="entry-img"
+                                         style="background-image: url('{{ articles[0].introImg }}')"></div>
+                                    <div class="entry-desc">
+                                        <h3>{{ articles[0].title }}</h3>
+                                        <p>{{ articles[0].description | safe }} </p>
+                                    </div>
+                                </a>
+                                <a href="/category/{{ articles[0].categories.id }}" class="post-meta">{{ articles[0].categories.name }} <span
+                                        class="date-posted">{{ articles[0].dateAdd }}</span></a>
+                            </li>
+                        {% endif %}
+                        {% if articles[1] %}
+                            <li class="two-third entry animate-box" data-animate-effect="fadeIn">
+                                <a href="/article/{{ articles[1].id }}">
+                                    <div class="entry-img"
+                                         style="background-image: url('{{ articles[1].introImg }}')"></div>
+                                    <div class="entry-desc">
+                                        <h3>{{ articles[1].title }}</h3>
+                                        <p>{{ articles[1].description | safe }} </p>
+                                    </div>
+                                </a>
+                                <a href="/category/{{ articles[1].categories.id }}" class="post-meta">{{ articles[1].categories.name }} <span
+                                        class="date-posted">{{ articles[1].dateAdd }}</span></a>
+                            </li>
+                        {% endif %}
+                        {% if articles[2] %}
+                            <li class="one-third entry animate-box" data-animate-effect="fadeIn">
+                                <a href="/article/{{ articles[2].id }}">
+                                    <div class="entry-img"
+                                         style="background-image: url('{{ articles[2].introImg }}')"></div>
+                                    <div class="entry-desc">
+                                        <h3>{{ articles[2].title }}</h3>
+                                        <p>{{ articles[2].description | safe }} </p>
+                                    </div>
+                                </a>
+                                <a href="/category/{{ articles[2].categories.id }}" class="post-meta">{{ articles[2].categories.name }} <span
+                                        class="date-posted">{{ articles[2].dateAdd }}</span></a>
+                            </li>
+                        {% endif %}
+                        {% if articles[3] %}
+                            <li class="one-third entry animate-box" data-animate-effect="fadeIn">
+                                <a href="/article/{{ articles[3].id }}">
+                                    <div class="entry-img"
+                                         style="background-image: url('{{ articles[3].introImg }}')"></div>
+                                    <div class="entry-desc">
+                                        <h3>{{ articles[3].title }}</h3>
+                                        <p>{{ articles[3].description | safe }} </p>
+                                    </div>
+                                </a>
+                                <a href="/category/{{ articles[3].categories.id }}" class="post-meta">{{ articles[3].categories.name }} <span
+                                        class="date-posted">{{ articles[3].dateAdd }}</span></a>
+                            </li>
+                        {% endif %}
+                        {% if articles[4] %}
+                            <li class="one-third entry animate-box" data-animate-effect="fadeIn">
+                                <a href="/article/{{ articles[4].id }}">
+                                    <div class="entry-img"
+                                         style="background-image: url('{{ articles[4].introImg }}')"></div>
+                                    <div class="entry-desc">
+                                        <h3>{{ articles[4].title }}</h3>
+                                        <p>{{ articles[4].description | safe }} </p>
+                                    </div>
+                                </a>
+                                <a href="/category/{{ articles[4].categories.id }}" class="post-meta">{{ articles[4].categories.name }} <span
+                                        class="date-posted">{{ articles[4].dateAdd }}</span></a>
+                            </li>
+                        {% endif %}
+                        {% if articles[5] %}
+                            <li class="one-third entry animate-box" data-animate-effect="fadeIn">
+                                <a href="/article/{{ articles[5].id }}">
+                                    <div class="entry-img"
+                                         style="background-image: url('{{ articles[5].introImg }}')"></div>
+                                    <div class="entry-desc">
+                                        <h3>{{ articles[5].title }}</h3>
+                                        <p>{{ articles[5].description | safe }} </p>
+                                    </div>
+                                </a>
+                                <a href="/category/{{ articles[5].categories.id }}" class="post-meta">{{ articles[5].categories }} <span
+                                        class="date-posted">{{ articles[5].dateAdd }}</span></a>
+                            </li>
+
+                        {% endif %}
+                        {% if articles[6] %}
+                            <li class="one-half entry animate-box" data-animate-effect="fadeIn">
+                                <a href="/article/{{ articles[6].id }}">
+                                    <div class="entry-img"
+                                         style="background-image: url('{{ articles[6].introImg }}')"></div>
+                                    <div class="entry-desc">
+                                        <h3>{{ articles[6].title }}</h3>
+                                        <p>{{ articles[6].description | safe }} </p>
+                                    </div>
+                                </a>
+                                <a href="/category/{{ articles[6].categories.id }}" class="post-meta">{{ articles[6].categories.name }} <span
+                                        class="date-posted">{{ articles[6].dateAdd }}</span></a>
+                            </li>
+                        {% endif %}
+                        {% if articles[7] %}
+                            <li class="one-half entry animate-box" data-animate-effect="fadeIn">
+                                <a href="/article/{{ articles[7].id }}">
+                                    <div class="entry-img"
+                                         style="background-image: url('{{ articles[7].introImg }}')"></div>
+                                    <div class="entry-desc">
+                                        <h3>{{ articles[7].title }}</h3>
+                                        <p>{{ articles[7].description | safe }} </p>
+                                    </div>
+                                </a>
+                                <a href="/category/{{ articles[7].categories.id }}" class="post-meta">{{ articles[7].categories.name }} <span
+                                        class="date-posted">{{ articles[7].dateAdd }}</span></a>
+                            </li>
+                        {% endif %}
+                        {% if articles[8] %}
+                            <li class="one-third entry animate-box" data-animate-effect="fadeIn">
+                                <a href="/article/{{ articles[8].id }}">
+                                    <div class="entry-img"
+                                         style="background-image: url('{{ articles[8].introImg }}')"></div>
+                                    <div class="entry-desc">
+                                        <h3>{{ articles[8].title }}</h3>
+                                        <p>{{ articles[8].description | safe }} </p>
+                                    </div>
+                                </a>
+                                <a href="/category/{{ articles[8].categories.id }}" class="post-meta">{{ articles[8].categories.name }} <span
+                                        class="date-posted">{{ articles[8].dateAdd }}</span></a>
+                            </li>
+                        {% endif %}
+                        {% if articles[9] %}
+                            <li class="two-third entry animate-box" data-animate-effect="fadeIn">
+                                <a href="/article/{{ articles[9].id }}">
+                                    <div class="entry-img"
+                                         style="background-image: url('{{ articles[9].introImg }}')"></div>
+                                    <div class="entry-desc">
+                                        <h3>{{ articles[9].title }}</h3>
+                                        <p>{{ articles[9].description | safe }} </p>
+                                    </div>
+                                </a>
+                                <a href="/category/{{ articles[9].categories.id }}" class="post-meta">{{ articles[9].categories.name }} <span
+                                        class="date-posted">{{ articles[9].dateAdd }}</span></a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li>
+                                {% if prevUrl %}
+                                    <a href="{{ prevUrl }}" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                {% else %}
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                {% endif %}
+                            </li>
+                            {% for i in range(total) %}
+                                {% if i + 1 == page %}
+                                    <li class="active"><a href="/?page={{ i + 1 }}">{{ i + 1 }}</a></li>
+                                {% else %}
+                                    <li><a href="/?page={{ i + 1 }}">{{ i + 1 }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            <li>
+                                {% if nextUrl %}
+                                    <a href="{{ nextUrl }}" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                {% else %}
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                {% endif %}
+
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
